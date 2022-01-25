@@ -1,0 +1,17 @@
+REST API with PHP :
+
+- GET : ambil data
+- POST : masukan data
+- DELETE : hapus data
+- PUT : edit data
+- upload file
+
+- AUTH : api key / token
+
+Definisi awal :
+
+- metode awal, GET, POST, PUT, DELETE
+
+GET : params
+POST : form data
+PUT : form encode data 

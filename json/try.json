@@ -1,0 +1,62 @@
+[
+  {
+    "nama": "arief saifuddien",
+    "umur": 21,
+    "nrp": "39830110",
+    "lulus": true,
+    "jurusan": "islamic studies",
+    "makul": [
+      "sirah",
+      "fikih"
+    ],
+    "pembimbing": {
+      "pem1": "umar ali",
+      "pem2": "denny alam"
+    }
+  },
+  {
+    "nama": "arief saifuddien",
+    "umur": 21,
+    "nrp": "39830110",
+    "lulus": true,
+    "jurusan": "islamic studies",
+    "makul": [
+      "sirah",
+      "fikih"
+    ],
+    "pembimbing": {
+      "pem1": "umar ali",
+      "pem2": "denny alam"
+    }
+  },
+  {
+    "nama": "arief saifuddien",
+    "umur": 21,
+    "nrp": "39830110",
+    "lulus": true,
+    "jurusan": "islamic studies",
+    "makul": [
+      "sirah",
+      "fikih"
+    ],
+    "pembimbing": {
+      "pem1": "umar ali",
+      "pem2": "denny alam"
+    }
+  },
+  {
+    "nama": "arief saifuddien",
+    "umur": 21,
+    "nrp": "39830110",
+    "lulus": true,
+    "jurusan": "islamic studies",
+    "makul": [
+      "sirah",
+      "fikih"
+    ],
+    "pembimbing": {
+      "pem1": "umar ali",
+      "pem2": "denny alam"
+    }
+  }
+]

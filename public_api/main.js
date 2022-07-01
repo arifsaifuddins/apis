@@ -14,7 +14,7 @@
 
 // function getData() {
 //   $.ajax({
-//     url: 'http://www.omdbapi.com/?apikey=412e58d4&s=' + $('.input-key').val(),
+//     url: 'https://www.omdbapi.com/?apikey=412e58d4&s=' + $('.input-key').val(),
 //     success: show => {
 //       const movie = show.Search;
 //       let datas = '';
@@ -27,7 +27,7 @@
 
 //       $('.see-more').on('click', function () {
 //         $.ajax({
-//           url: 'http://www.omdbapi.com/?apikey=412e58d4&i=' + $(this).data('imdb'),
+//           url: 'https://www.omdbapi.com/?apikey=412e58d4&i=' + $(this).data('imdb'),
 //           success: d => {
 //             const movieDetail = seeMovieDetail(d);
 //             $('.modal-body').html(movieDetail);
@@ -56,7 +56,7 @@
 
 // function getData() {
 //   let key = inputKey.value;
-//   fetch('http://www.omdbapi.com/?apikey=412e58d4&s=' + key)
+//   fetch('https://www.omdbapi.com/?apikey=412e58d4&s=' + key)
 //     .then(m => m.json())
 //     .then(k => {
 //       const movie = k.Search;
@@ -72,7 +72,7 @@
 //       seeMore.forEach(more => {
 //         more.addEventListener('click', function () {
 //           const dataid = this.dataset.imdb;
-//           fetch('http://www.omdbapi.com/?apikey=412e58d4&i=' + dataid)
+//           fetch('https://www.omdbapi.com/?apikey=412e58d4&i=' + dataid)
 //             .then(j => j.json())
 //             .then(d => {
 //               const detail = seeMovieDetail(d);
@@ -119,7 +119,7 @@ inputKey.addEventListener('keyup', async function (e) {
 });
 
 function getData(key) {
-  return fetch('http://www.omdbapi.com/?apikey=412e58d4&s=' + key)
+  return fetch('https://www.omdbapi.com/?apikey=412e58d4&s=' + key)
     .then(m => {
       if (!m.ok) {
         throw new Error('Input a Correct Movie...');
@@ -151,7 +151,7 @@ document.addEventListener('click', async function (e) {
 });
 
 function detailData(dataid) {
-  return fetch('http://www.omdbapi.com/?apikey=412e58d4&i=' + dataid)
+  return fetch('https://www.omdbapi.com/?apikey=412e58d4&i=' + dataid)
     .then(j => j.json())
     .then(d => d);
 }

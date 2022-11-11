@@ -1,60 +1,56 @@
 <?php
 
-// function get_CURL($url) {
+function cURL($url, $token) {
 
-//   // create a new cURL resource
-//   $ch = curl_init();
+  $curl = curl_init($url);
 
-//   // set URL and other appropriate options
-//   curl_setopt($ch, CURLOPT_URL, $url);
+  // config
+  curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+  curl_setopt($curl, CURLOPT_HEADER, true);
 
-//   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  // GET
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($curl, CURLOPT_HTTPHEADER, [
+    'Content-Type: application/json',
+    'Accept: application/json',
+    $token
+  ]);
 
-//   // grab URL and pass it to the browser
-//   $row = curl_exec($ch);
+  // $data = [
+  //   'collection' => 'RapidAPI'
+  // ];
 
-//   // close cURL resource, and free up system resources
-//   curl_close($ch);
+  // // POST
+  // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  // curl_setopt($curl, CURLOPT_POST, true);
+  // curl_setopt($curl, CURLOPT_POSTFIELDS,  json_encode($data));
+  // curl_setopt($curl, CURLOPT_HTTPHEADER, [
+  //   'Content-Type: application/json'
+  // ]);
 
-//   return json_decode($row, true);
+  // // PUT
+  // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  // curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PUT');
+  // curl_setopt($curl, CURLOPT_POSTFIELDS,  json_encode($data));
+  // curl_setopt($curl, CURLOPT_HTTPHEADER, [
+  //   'Content-Type: application/json'
+  // ]);
 
-//   var_dump(curl_error($ch));
-// }
+  // // DELETE
+  // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  // curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
+  // curl_setopt($curl, CURLOPT_HTTPHEADER, [
+  //   $token,
+  //   'Content-Type: application/json'
+  // ]);
 
-// $result = get_CURL("https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UCII3AozmHo0vA5W1E0rBiNw&key=AIzaSyATfBeJH7ND8fXhnfnGd3w9VCzrVYZOhRo");
+  $response = curl_exec($curl);
 
-// var_dump($result);
+  curl_close($curl);
+  // echo $response . PHP_EOL;
 
-$youtube = file_get_contents('https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UCII3AozmHo0vA5W1E0rBiNw&key=AIzaSyATfBeJH7ND8fXhnfnGd3w9VCzrVYZOhRo');
+  var_dump($response);
+  // var_dump(json_decode($response, true));
+}
 
-$row = json_decode($youtube, true);
-
-var_dump($row);
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Client URL</title>
-  <link rel="stylesheet" href="main.css">
-</head>
-
-<body>
-
-  <div class="container">
-    <div class="youtube"><?= $row['items'][0]['kind']; ?></div>
-  </div>
-
-  <script>
-    fetch(
-      'https://www.googleapis.com/youtube/v3/channels?part=statistics,snippet&id=UCII3AozmHo0vA5W1E0rBiNw&key=AIzaSyATfBeJH7ND8fXhnfnGd3w9VCzrVYZOhRo'
-    ).then(m => m.json()).then(d => console.log(d));
-  </script>
-</body>
-
-</html>
+cURL("https://quranme-api.vercel.app/quran/surah/80", 'auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmE3NTU5MTAzYzc5YzAyM2I1OTVlYjIiLCJpYXQiOjE2NTUxMzQwOTd9.eF0HAthc6ZNasRXmGcps6oF6neH5jHAfZXGRON51kAg');

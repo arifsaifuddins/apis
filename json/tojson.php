@@ -36,14 +36,12 @@
 // array
 // var_dump($mahasiswa);
 
-$dbh = new PDO( 'mysql:host=localhost;dbname=basicphp', 'root', '' );
-$db = $dbh->prepare( 'SELECT * FROM mahasiswa' );
+$dbh = new PDO('mysql:host=localhost;dbname=basicphp', 'root', '');
+$db = $dbh->prepare('SELECT * FROM mahasiswa');
 $db->execute();
 
-$mahasiswa = $db->fetchAll( PDO::FETCH_ASSOC );
+$mahasiswa = $db->fetchAll(PDO::FETCH_ASSOC);
 
 // array to json
-$data = json_encode( $mahasiswa );
-print_r( $data );
-
-?>
+$data = json_encode($mahasiswa);
+print_r($data);
